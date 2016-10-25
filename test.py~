@@ -1,0 +1,8 @@
+#!/usr/bin/python
+
+# testing python script
+
+import Bio
+
+print "BioPython version: " + str(Bio.__version__)
+

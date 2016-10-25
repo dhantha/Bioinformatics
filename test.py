@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+# testing python script
+import Bio as bio
+import matplotlib.pyplot as plot
+
+from Bio.Seq import Seq
+from Bio.Alphabet import generic_rna,generic_dna
+from Bio.SeqUtils import GC123,GC,GC_skew
+
+seq = "ataccaggctgaggcccattaatgatgcaatttgctgggcttctctattttctccgtgcttccatcctcttctccgtcggcggggagaagtgaaatgccgtggagatgggcggcggcggcggcgacggcggcgacgagaaagctcaccgggatctctcagtcgcgagtttcagtagcctttaccggccgtcttctctaccgctcgttcggaagcgactccagtgaaagccgcaagaggtcactgccacggggggtcgtatcgatcggggccatcagccttgctggaggtctcgtgctcagcgccgtcaacgacctcgccatcttcaatggatgcacaacgaaggcaattgagcatgctgctgacaaccctgctgttgtggaagcaattggagtgcctatagtcagaggaccgtggtatgatgcttctcttgaggtgggccatcgacggcggtctgtgtcatgcacattccctgtatctgggccacatgggtcaggatttctccagattaaggcaacccgagatggagaggatggtctgctttcgtttctgcggcatcacgactggaagatcctattgctggaggctcatcttgaagcaccatcagatgatgaggaccagagaaagctggttaaggtgaatcttgcaagcagtggccgtggggaagatggggatccagagagtggttaatcttttgtactgaattccatggtgagtggaagatcgtgtcatctgaatggactccaaatattaaatgacatggagatctagggaagcaaaaaaaaaaaaaaaa"
+
+print GC123(seq)
+print GC(seq)
+
+plot(GC_skew(seq,window=100),c="r")
+xlabel("Window")
+ylabel("(G-C)/(G+C)")
+title("GC-skew")
